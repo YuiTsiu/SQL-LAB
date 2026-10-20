@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS flower_shop;
+CREATE DATABASE flower_shop;
+USE flower_shop;
+
 CREATE TABLE IF NOT EXISTS `Store` (
 	`store_id` int AUTO_INCREMENT NOT NULL,
 	`store_name` varchar(40) NOT NULL,
