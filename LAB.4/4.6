@@ -1,0 +1,6 @@
+SELECT 
+* 
+FROM product 
+WHERE (product_type = 'Laptop' OR product_type = 'Desktop') 
+  AND (product_description LIKE '%512GB%' 
+        OR product_description LIKE '%1TB%');
