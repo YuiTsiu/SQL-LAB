@@ -1,0 +1,17 @@
+USE company;
+SELECT
+    e.employee_id AS 'Employee ID',
+    e.last_name AS 'Employee Last Name',
+    e.first_name AS 'Employee First Name',
+    e.position AS 'Employee Title',
+    i.employee_id AS 'Invoice Employee ID',
+    i.invoice_id AS 'Invoice',
+    i.customer_id AS 'Invoice Customer ID',
+    i.transaction_moment AS 'Transaction moment',
+    c.customer_id AS 'Customer ID',
+    c.last_name AS 'Customer Last Name',
+    c.first_name AS 'Customer First Name'
+FROM employee AS e
+JOIN invoice AS i ON e.employee_id = i.employee_id
+JOIN customer AS c ON i.customer_id = c.customer_id
+ORDER BY i.transaction_moment;
