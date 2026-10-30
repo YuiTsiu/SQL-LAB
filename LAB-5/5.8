@@ -1,0 +1,19 @@
+USE company;
+SELECT
+    e.employee_id AS 'Employee id',
+    e.last_name AS 'Employee Last Name',
+    e.first_name AS 'Employee First Name',
+    e.position AS 'Employee position',
+    e.manager_id AS 'Employee Manager Id',
+    e.department_id AS 'Employee department_id',
+    m.employee_id AS 'Manager ID',
+    m.last_name AS 'Manager Last Name',
+    m.first_name AS 'Manager First Name',
+    m.position AS 'Manager position',
+    m.department_id AS 'Manager Department Id',
+    d.department_id AS 'Department ID',
+    d.department_name AS 'Department Name',
+    d.city AS 'Department City'
+FROM department AS d
+RIGHT JOIN employee AS e ON e.department_id = d.department_id
+LEFT JOIN employee AS m ON e.manager_id = m.employee_id;
