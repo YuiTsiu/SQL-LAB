@@ -1,0 +1,15 @@
+USE company;
+SELECT
+    e.employee_id AS 'Employee ID',
+    e.last_name AS 'Employee Last Name',
+    e.first_name AS 'Employee First Name',
+    e.position AS 'Employee Title',
+    e.employment_date AS 'Hire Date',
+    e.manager_id AS 'Employee Manager ID',
+    m.employee_id AS 'Manager ID',
+    m.last_name AS 'Manager Last Name',
+    m.first_name AS 'Manager First Name',
+    m.position AS 'Manager Title',
+    m.employment_date AS 'Manager Hire Date'
+FROM employee AS e, employee AS m
+WHERE e.manager_id = m.employee_id;
