@@ -1,0 +1,11 @@
+USE company;
+SELECT
+    e.employee_id AS 'Employee ID',
+    e.last_name AS 'Employee Last Name',
+    e.first_name AS 'Employee First Name',
+    e.position AS 'Employee Title',
+    e.department_id AS 'Employee Department ID',
+    d.department_id AS 'Department ID',
+    d.department_name AS 'Department name'
+FROM employee AS e, department AS d
+WHERE e.department_id = d.department_id;
