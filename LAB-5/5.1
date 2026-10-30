@@ -1,0 +1,8 @@
+SELECT 
+employee_id "Manager ID",
+last_name "Manager Last Name",
+first_name "Manager First Name",
+position "Manager Title",
+employment_date AS "manager Hire Date"
+FROM employee as Managers
+WHERE position IN ('CEO', 'Manager');
