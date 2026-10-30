@@ -1,0 +1,9 @@
+USE company;
+SELECT employee_id, first_name, last_name, position, 'Consulting' AS Responsibility
+FROM employee
+WHERE position LIKE '%Consultant%'
+UNION
+SELECT employee_id, first_name, last_name, position, 'Not Consulting'
+FROM employee
+WHERE position NOT LIKE '%Consultant%'
+ORDER BY last_name;
