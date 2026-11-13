@@ -1,0 +1,17 @@
+USE Company;
+SELECT 
+    o.orders_id AS 'Orders ID',
+    p.product_name AS 'Product name',
+    p.category AS 'Product category',
+    i.invoice_id AS 'Invoice ID',
+    i.transaction_moment AS 'Transaction moment',
+    c.last_name AS 'Customer last name',
+    c.first_name AS 'Customer first name'
+FROM orders AS o
+JOIN product AS p ON o.product_id = p.product_id
+JOIN invoice AS i ON o.invoice_id = i.invoice_id
+JOIN customer AS c ON i.customer_id = c.customer_id
+JOIN employee AS e ON i.employee_id = e.employee_id
+JOIN department AS d ON e.department_id = d.department_id
+WHERE d.department_name = 'Moon' 
+ORDER BY o.orders_id;
