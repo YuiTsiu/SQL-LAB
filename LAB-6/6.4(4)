@@ -1,0 +1,6 @@
+USE company;
+SELECT
+department_id AS 'Department id',
+COUNT(*) AS 'Count of employees by Department'
+FROM employee
+GROUP BY department_id;
