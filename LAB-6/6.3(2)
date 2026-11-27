@@ -1,0 +1,6 @@
+SELECT
+MIN(rate) AS 'Lowest salary',
+MAX(rate) AS 'Highest salary',
+FORMAT(AVG(bonus), 2) AS 'Average Bonus by Employee',
+FORMAT(SUM(COALESCE(bonus, 0)) / COUNT(*), 2) AS 'Average Bonus by Company'
+FROM employee;
