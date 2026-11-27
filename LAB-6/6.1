@@ -1,0 +1,7 @@
+USE company;
+SELECT
+LPAD(employee_id, 5, '0') AS 'Employee ID',
+CONCAT_WS(' ', last_name, first_name) AS 'Full name',
+CONCAT_WS(' ', last_name, first_name, position) AS 'Full name with Position',
+CONCAT(LOWER(first_name), '.', LOWER(last_name), '@company.com') AS 'email'
+FROM employee;
