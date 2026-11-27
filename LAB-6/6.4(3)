@@ -1,0 +1,4 @@
+USE company;
+SELECT
+COUNT(DISTINCT city) AS 'Count of representative offices of cities'
+FROM department;
