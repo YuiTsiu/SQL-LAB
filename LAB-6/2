@@ -1,0 +1,11 @@
+USE company;
+SELECT
+LPAD(MONTH(o.order_datetime), 2, '0') AS 'Month',
+FORMAT(SUM(o.quantity * p.price), 2)  AS 'Total revenue',
+CONCAT('Quater ', QUARTER(MIN(o.order_datetime)), ' - ',
+YEAR(MIN(o.order_datetime)))   AS 'Sales Period'
+FROM orders o
+JOIN product p 
+using (product_id)
+GROUP BY LPAD(MONTH(o.order_datetime), 2, '0')
+ORDER BY MIN(o.order_datetime);
