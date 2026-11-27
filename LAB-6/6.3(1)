@@ -1,0 +1,12 @@
+USE company;
+SELECT
+'Count of All employees' AS 'Bonus eligible',
+COUNT(*) AS 'Count of employees'
+FROM employee
+UNION
+SELECT
+'Count of employees who received bonus' AS 'Bonus eligible',
+COUNT(*) AS 'Count ofSELECT
+ employees'
+FROM employee
+WHERE bonus IS NOT NULL;
