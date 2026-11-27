@@ -1,0 +1,4 @@
+USE company;
+SELECT
+COUNT(*) AS 'Count of Offices',
+FROM department;
