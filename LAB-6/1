@@ -1,0 +1,7 @@
+SELECT
+LPAD(product_id, 4, '0') AS 'Product ID',
+CONCAT(manufacture,' :: ', TRIM(SUBSTRING_INDEX(product_name, '/', 1))
+) AS 'Product Name',
+UPPER(CONCAT(product_type, ' - ', category)) AS 'Category'
+FROM product
+ORDER BY manufacture ASC, product_id ASC;
