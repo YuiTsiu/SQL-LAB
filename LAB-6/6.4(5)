@@ -1,0 +1,8 @@
+USE company;
+SELECT
+department_id AS 'Department id',
+position AS 'Position',
+COUNT(*) AS 'Count of employees by Position for each Department'
+FROM employee
+GROUP BY department_id, position
+ORDER BY COUNT(*) DESC;
